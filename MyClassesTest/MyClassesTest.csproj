@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="FileProcessTestStubs.cs" />
     <Compile Include="FileProcessTest.cs" />
+    <Compile Include="MyClassesTestInitializations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
