@@ -60,6 +60,42 @@ namespace MyClassesTest
         public TestContext TestContext { get; set; }
 
         [TestMethod]
+        [DataSource("System.Data.SqlClient",
+            "Server=(localdb)\\MSSQLLocalDB; Database=exampledb; Integrated Security=Yes",
+            "tests.FileProcessTest",
+            DataAccessMethod.Sequential)]
+        public void FileExistsTestFromDB()
+        {
+            FileProcess fp = new FileProcess();
+            string fileName;
+            bool expectedValue;
+            bool causesException;
+            bool fromCall;
+
+            // Gets values from data row
+            fileName = TestContext.DataRow["FileName"].ToString();
+            expectedValue = Convert.ToBoolean(TestContext.DataRow["ExpectedValue"]);
+            causesException = Convert.ToBoolean(TestContext.DataRow["CausesException"]);
+
+            //Check assertions
+            try
+            {
+                fromCall = fp.FileExists(fileName);
+                Assert.AreEqual(expectedValue, fromCall,
+                    "File Name: " + fileName +
+                    " has failed it's existence test in test: FileExistsTestFromDB()");
+            }
+            catch (AssertFailedException ex)
+            {
+                throw ex;
+            }
+            catch (ArgumentNullException)
+            {
+                Assert.IsTrue(causesException);
+            }
+        }
+
+        [TestMethod]
         [Description("Check to see if a file does exist.")]
         [Owner("Ben")]
         [Priority(0)]
