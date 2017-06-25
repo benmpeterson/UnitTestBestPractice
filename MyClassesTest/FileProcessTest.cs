@@ -7,6 +7,9 @@ namespace MyClassesTest
   [TestClass]
   public class FileProcessTest
   {
+        //Use Consts in Unit Testing when possible
+        private const string BAD_FILE_NAME = @"C:\NotExists.bad";
+
     [TestMethod]
     public void FileNameDoesExist() {
       FileProcess fp = new FileProcess();
@@ -22,7 +25,7 @@ namespace MyClassesTest
       FileProcess fp = new FileProcess();
       bool fromCall;
 
-      fromCall = fp.FileExists(@"C:\NotExists.bad");
+      fromCall = fp.FileExists(BAD_FILE_NAME);
 
       Assert.IsFalse(fromCall);
     }

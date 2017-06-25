@@ -1,0 +1,5 @@
+C:\Users\Ben\dev\UnitTestingPractice\MyClasses\bin\Debug\MyClasses.dll
+C:\Users\Ben\dev\UnitTestingPractice\MyClasses\bin\Debug\MyClasses.pdb
+C:\Users\Ben\dev\UnitTestingPractice\MyClasses\obj\Debug\MyClasses.csprojResolveAssemblyReference.cache
+C:\Users\Ben\dev\UnitTestingPractice\MyClasses\obj\Debug\MyClasses.dll
+C:\Users\Ben\dev\UnitTestingPractice\MyClasses\obj\Debug\MyClasses.pdb

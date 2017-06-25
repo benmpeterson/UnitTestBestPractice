@@ -1,0 +1,9 @@
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\bin\Debug\MyClassesTest.dll.config
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\bin\Debug\MyClassesTest.dll
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\bin\Debug\MyClassesTest.pdb
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\bin\Debug\MyClasses.dll
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\bin\Debug\MyClasses.pdb
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\obj\Debug\MyClassesTest.csprojResolveAssemblyReference.cache
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\obj\Debug\MyClassesTest.dll
+C:\Users\Ben\dev\UnitTestingPractice\MyClassesTest\obj\Debug\MyClassesTest.pdb
