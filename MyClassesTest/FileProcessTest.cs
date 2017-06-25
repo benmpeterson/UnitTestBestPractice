@@ -31,7 +31,7 @@ namespace MyClassesTest
         [TestInitialize]
         public void TestInitialize()
         {
-            if (TestContext.TestName == "FileNameDoesExist")
+            if (TestContext.TestName.StartsWith("FileNameDoesExist"))
             {
                 SetGoodFileName();
                 //Creates a temp file using app.config then deletes it automatically
@@ -46,7 +46,7 @@ namespace MyClassesTest
         [TestCleanup]
         public void TestCleanup()
         {
-            if (TestContext.TestName == "FileNameDoesExist")
+            if (TestContext.TestName.StartsWith("FileNameDoesExist"))
             {
                 if (!string.IsNullOrEmpty(_GoodFileName))
                 {
@@ -60,6 +60,9 @@ namespace MyClassesTest
         public TestContext TestContext { get; set; }
 
         [TestMethod]
+        [Description("Check to see if a file does exist.")]
+        [Owner("Ben")]
+        [Priority(0)]
         public void FileNameDoesExist()
         {
             FileProcess fp = new FileProcess();
@@ -70,6 +73,19 @@ namespace MyClassesTest
         }
 
         [TestMethod]
+        public void FileNameDoesExistSimpleMessage()
+        {
+            FileProcess fp = new FileProcess();
+            bool fromCall;
+
+            fromCall = fp.FileExists(_GoodFileName);
+
+            Assert.IsFalse(fromCall, "File Does NOT Exist.");
+        }
+
+        [TestMethod]
+        [Priority(0)]
+        [TestCategory("NoException")]
         public void FileNameDoesNotExist()
         {
             FileProcess fp = new FileProcess();
@@ -92,6 +108,8 @@ namespace MyClassesTest
 
 
         [TestMethod]
+        [Priority(1)]
+        [TestCategory("Exception")]
         public void FileNameNullOrEmpty_ThrowsArgumentNullException()
         {
             FileProcess fp = new FileProcess();
@@ -118,6 +136,13 @@ namespace MyClassesTest
             FileProcess fp = new FileProcess();
 
             fp.FileExists("");
+        }
+
+        [TestMethod]
+        [Timeout(3000)]
+        public void SimulateTimeout()
+        {
+            System.Threading.Thread.Sleep(4000);
         }
     }
 }
